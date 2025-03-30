@@ -55,18 +55,18 @@ find_package(catkin REQUIRED COMPONENTS
 #   MyCustomMessage.msg
 # )
 
-# add_service_files(
-#   FILES
-#   MyCustomService.srv
-# )
+add_service_files(
+  FILES
+  SetBugMode.srv
+)
 
 ## Generate added messages and services
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
+generate_messages(
+  DEPENDENCIES
+  std_msgs
 #   sensor_msgs
 #   geometry_msgs
-# )
+)
 
 catkin_package(
   CATKIN_DEPENDS rospy std_msgs sensor_msgs geometry_msgs nav_msgs message_runtime

@@ -1,0 +1,4 @@
+bool go_to_point
+---
+bool success
+string message
