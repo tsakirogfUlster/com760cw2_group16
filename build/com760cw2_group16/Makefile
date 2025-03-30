@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/fotis/Documents/ulster/com760cw2_group16/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -89,16 +89,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : install/strip/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -166,6 +166,96 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_genpy.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_genpy.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_genpy.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_genpy: com760cw2_group16/CMakeFiles/com760cw2_group16_genpy.dir/rule
+
+.PHONY : com760cw2_group16_genpy
+
+# fast build rule for target.
+com760cw2_group16_genpy/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_genpy.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_genpy.dir/build
+.PHONY : com760cw2_group16_genpy/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_genlisp.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_genlisp.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_genlisp.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_genlisp: com760cw2_group16/CMakeFiles/com760cw2_group16_genlisp.dir/rule
+
+.PHONY : com760cw2_group16_genlisp
+
+# fast build rule for target.
+com760cw2_group16_genlisp/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_genlisp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_genlisp.dir/build
+.PHONY : com760cw2_group16_genlisp/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_geneus.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_geneus.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_geneus.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_geneus: com760cw2_group16/CMakeFiles/com760cw2_group16_geneus.dir/rule
+
+.PHONY : com760cw2_group16_geneus
+
+# fast build rule for target.
+com760cw2_group16_geneus/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_geneus.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_geneus.dir/build
+.PHONY : com760cw2_group16_geneus/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_generate_messages_eus: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/rule
+
+.PHONY : com760cw2_group16_generate_messages_eus
+
+# fast build rule for target.
+com760cw2_group16_generate_messages_eus/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/build
+.PHONY : com760cw2_group16_generate_messages_eus/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_gencpp.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_gencpp.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_gencpp.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_gencpp: com760cw2_group16/CMakeFiles/com760cw2_group16_gencpp.dir/rule
+
+.PHONY : com760cw2_group16_gencpp
+
+# fast build rule for target.
+com760cw2_group16_gencpp/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_gencpp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_gencpp.dir/build
+.PHONY : com760cw2_group16_gencpp/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_generate_messages: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages.dir/rule
+
+.PHONY : com760cw2_group16_generate_messages
+
+# fast build rule for target.
+com760cw2_group16_generate_messages/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages.dir/build
+.PHONY : com760cw2_group16_generate_messages/fast
+
+# Convenience name for target.
 com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 .PHONY : com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
@@ -211,6 +301,21 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_generate_messages_lisp: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/rule
+
+.PHONY : com760cw2_group16_generate_messages_lisp
+
+# fast build rule for target.
+com760cw2_group16_generate_messages_lisp/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/build
+.PHONY : com760cw2_group16_generate_messages_lisp/fast
+
+# Convenience name for target.
 com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -224,6 +329,21 @@ sensor_msgs_generate_messages_eus: com760cw2_group16/CMakeFiles/sensor_msgs_gene
 sensor_msgs_generate_messages_eus/fast:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_generate_messages_cpp: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/rule
+
+.PHONY : com760cw2_group16_generate_messages_cpp
+
+# fast build rule for target.
+com760cw2_group16_generate_messages_cpp/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/build
+.PHONY : com760cw2_group16_generate_messages_cpp/fast
 
 # Convenience name for target.
 com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
@@ -269,6 +389,36 @@ std_msgs_generate_messages_cpp: com760cw2_group16/CMakeFiles/std_msgs_generate_m
 std_msgs_generate_messages_cpp/fast:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make com760cw2_group16/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_generate_messages_py: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/rule
+
+.PHONY : com760cw2_group16_generate_messages_py
+
+# fast build rule for target.
+com760cw2_group16_generate_messages_py/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/build
+.PHONY : com760cw2_group16_generate_messages_py/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
+
+# Convenience name for target.
+_com760cw2_group16_generate_messages_check_deps_SetBugMode: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
+
+.PHONY : _com760cw2_group16_generate_messages_check_deps_SetBugMode
+
+# fast build rule for target.
+_com760cw2_group16_generate_messages_check_deps_SetBugMode/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build
+.PHONY : _com760cw2_group16_generate_messages_check_deps_SetBugMode/fast
 
 # Convenience name for target.
 com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -359,6 +509,21 @@ std_msgs_generate_messages_py: com760cw2_group16/CMakeFiles/std_msgs_generate_me
 std_msgs_generate_messages_py/fast:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/std_msgs_generate_messages_py.dir/build.make com760cw2_group16/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_generate_messages_nodejs: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/rule
+
+.PHONY : com760cw2_group16_generate_messages_nodejs
+
+# fast build rule for target.
+com760cw2_group16_generate_messages_nodejs/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/build
+.PHONY : com760cw2_group16_generate_messages_nodejs/fast
 
 # Convenience name for target.
 com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
@@ -466,6 +631,21 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+com760cw2_group16/CMakeFiles/com760cw2_group16_gennodejs.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/com760cw2_group16_gennodejs.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/com760cw2_group16_gennodejs.dir/rule
+
+# Convenience name for target.
+com760cw2_group16_gennodejs: com760cw2_group16/CMakeFiles/com760cw2_group16_gennodejs.dir/rule
+
+.PHONY : com760cw2_group16_gennodejs
+
+# fast build rule for target.
+com760cw2_group16_gennodejs/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_gennodejs.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_gennodejs.dir/build
+.PHONY : com760cw2_group16_gennodejs/fast
+
+# Convenience name for target.
 com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 .PHONY : com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
@@ -546,24 +726,35 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... install/strip"
+	@echo "... com760cw2_group16_genpy"
+	@echo "... test"
+	@echo "... com760cw2_group16_genlisp"
+	@echo "... com760cw2_group16_geneus"
+	@echo "... com760cw2_group16_generate_messages_eus"
+	@echo "... com760cw2_group16_gencpp"
+	@echo "... rebuild_cache"
+	@echo "... com760cw2_group16_generate_messages"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... list_install_components"
+	@echo "... com760cw2_group16_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... com760cw2_group16_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... com760cw2_group16_generate_messages_py"
+	@echo "... _com760cw2_group16_generate_messages_check_deps_SetBugMode"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... com760cw2_group16_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
@@ -571,6 +762,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... com760cw2_group16_gennodejs"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... nav_msgs_generate_messages_cpp"
 	@echo "... install"
