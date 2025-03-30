@@ -8,11 +8,12 @@ project(com760cw2_group16)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  rospy
+  std_msgs
+  sensor_msgs
   geometry_msgs
   nav_msgs
-  rospy
-  sensor_msgs
-  std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -48,32 +49,32 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * uncomment the generate_messages entry below
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
-## Generate messages in the 'msg' folder
+## Declare ROS messages and services here if needed
 # add_message_files(
 #   FILES
-#   Message1.msg
-#   Message2.msg
+#   MyCustomMessage.msg
 # )
 
-## Generate services in the 'srv' folder
 # add_service_files(
 #   FILES
-#   Service1.srv
-#   Service2.srv
+#   MyCustomService.srv
 # )
 
-## Generate actions in the 'action' folder
-# add_action_files(
-#   FILES
-#   Action1.action
-#   Action2.action
-# )
-
-## Generate added messages and services with any dependencies listed here
+## Generate added messages and services
 # generate_messages(
 #   DEPENDENCIES
-#   geometry_msgs#   nav_msgs#   sensor_msgs#   std_msgs
+#   std_msgs
+#   sensor_msgs
+#   geometry_msgs
 # )
+
+catkin_package(
+  CATKIN_DEPENDS rospy std_msgs sensor_msgs geometry_msgs nav_msgs message_runtime
+)
+
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##

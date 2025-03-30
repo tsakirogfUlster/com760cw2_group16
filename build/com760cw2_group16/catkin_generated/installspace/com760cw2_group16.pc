@@ -1,0 +1,8 @@
+prefix=/home/fotis/Documents/ulster/com760cw2_group16/install
+
+Name: com760cw2_group16
+Description: Description of com760cw2_group16
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
