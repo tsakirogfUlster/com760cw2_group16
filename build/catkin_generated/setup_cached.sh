@@ -7,5 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu'
+export PKG_CONFIG_PATH="/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/fotis/Documents/ulster/com760cw2_group16/build'

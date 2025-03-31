@@ -1,2 +1,2 @@
-
+com760cw2_group16
 -DCATKIN_DEVEL_PREFIX=/home/fotis/Documents/ulster/com760cw2_group16/devel -DCMAKE_INSTALL_PREFIX=/home/fotis/Documents/ulster/com760cw2_group16/install -G Unix Makefiles
