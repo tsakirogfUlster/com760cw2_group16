@@ -1,21 +1,27 @@
 <launch>
-  <!-- Start Gazebo with an empty world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
 
-  <!-- Load URDF into parameter server -->
+  <!-- Load dynamically generated random world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="world_name" value="$(find com760cw2_group16)/world/random_world.world"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+  </include>
+
+<!-- Load URDF into parameter server -->
   <param name="robot_description" textfile="$(find com760cw2_group16)/urdf/group16Bot.urdf" />
 
   <!-- Robot State Publisher -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
 
-  <!-- Spawn robot into Gazebo -->
+  <!-- Spawn robot into Gazebo at starting point -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-param robot_description -model group16Bot -x 0 -y 0 -z 0.1" />
+        args="-param robot_description -model group16Bot -x -4 -y -4 -z 0.1" />
 
   <!-- Start Bug2 controller -->
   <node name="bug2_node" pkg="com760cw2_group16" type="Bug2.py" output="screen" />
 
-  <!-- Start GoToPoint and FollowWall (if needed) -->
+  <!-- Start GoToPoint and FollowWall -->
   <node name="go_to_point" pkg="com760cw2_group16" type="GoToPoint.py" output="screen" />
   <node name="follow_wall" pkg="com760cw2_group16" type="FollowWall.py" output="screen" />
+
 </launch>
