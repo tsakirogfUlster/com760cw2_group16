@@ -71,6 +71,29 @@
     </inertial>
   </link>
 
+    <!-- Front wheel (dummy caster) -->
+  <link name="front_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.03" radius="0.03"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.03" radius="0.03"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0"
+               iyy="0.00001" iyz="0"
+               izz="0.00001"/>
+    </inertial>
+  </link>
+
   <!-- Laser link -->
   <link name="laser">
     <visual>
@@ -121,5 +144,33 @@
     <origin xyz="0.2 0 -0.1" rpy="0 1.5708 0"/>
     <axis xyz="0 1 0"/>
   </joint>
+
+  <joint name="base_to_front_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_wheel"/>
+    <origin xyz="0 0.2 -0.1" rpy="0 1.5708 0"/>
+  </joint>
+
+  <gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50.0</updateRate>
+      <leftJoint>left_wheel_joint</leftJoint>
+      <rightJoint>right_wheel_joint</rightJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.1</wheelDiameter>
+      <wheelTorque>5.0</wheelTorque>
+      <wheelAcceleration>0.0</wheelAcceleration>
+      <publishWheelTF>false</publishWheelTF>
+      <publishWheelJointState>true</publishWheelJointState>
+      <publishTf>true</publishTf>
+      <publishOdomTF>true</publishOdomTF>
+      <legacyMode>false</legacyMode> <!-- 🔧 αυτό λύνει το error -->
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
 
 </robot>
