@@ -1,6 +1,8 @@
 import random
 
-WORLD_SIZE = 10  # 10x10 meters
+import rospy
+
+WORLD_SIZE = 12  # 12x12 meters
 NUM_OBSTACLES = 6
 NUM_RANDOM_WALLS = 3
 
@@ -103,6 +105,8 @@ def write_random_walls(f):
 """.format(i, x, y, yaw, length))
 
 def write_start_and_finish(f):
+    rospy.set_param('/start_point', [-4, -4])
+    rospy.set_param('/goal_point', [4, 4])
     f.write("""
   <model name="start_point">
     <static>true</static>
