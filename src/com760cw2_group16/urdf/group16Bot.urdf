@@ -170,6 +170,7 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_laser" filename="libgazebo_ros_laser.so">
+        <robotNamespace>group16Bot/laser</robotNamespace>
         <topicName>scan</topicName>
         <frameName>laser</frameName>
       </plugin>
@@ -192,6 +193,7 @@
       <publishTf>true</publishTf>
       <publishOdomTF>true</publishOdomTF>
       <legacyMode>false</legacyMode>
+      <robotNamespace>/group16Bot</robotNamespace>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>

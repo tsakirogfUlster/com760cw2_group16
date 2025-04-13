@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   nav_msgs
   message_generation
+  gazebo_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -189,11 +190,12 @@ include_directories(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES
+    com760cw2_group16/src/scripts/Bug2.py
+    com760cw2_group16/src/scripts/FollowWall.py
+    com760cw2_group16/src/scripts/GoToPoint.py
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 #############
 ## Testing ##

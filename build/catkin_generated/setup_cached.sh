@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/fotis/Documents/ulster/com760cw2_group16/build'

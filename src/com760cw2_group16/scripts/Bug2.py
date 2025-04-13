@@ -1,102 +1,144 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
+
 import rospy
-from geometry_msgs.msg import Twist, Point
+from geometry_msgs.msg import Point
 from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
 from tf import transformations
+from gazebo_msgs.msg import ModelState
+from gazebo_msgs.srv import SetModelState
+from std_srvs.srv import SetBool
+
 import math
 
-class Bug2Full:
-    def __init__(self):
-        rospy.init_node('bug2_full')
+# Global variables
+srv_client_go_to_point_ = None
+srv_client_wall_follower_ = None
+yaw_ = 0
+yaw_error_allowed_ = 5 * (math.pi / 180)  # 5 degrees
+position_ = Point()
 
-        # Read start and goal from parameter server
-        start = rospy.get_param('/start_point', [0.0, 0.0])
-        goal = rospy.get_param('/goal_point', [2.0, 0.0])
+initial_position_ = Point()
+initial_position_.x = rospy.get_param('initial_x')
+initial_position_.y = rospy.get_param('initial_y')
+initial_position_.z = 0
 
-        self.pose = Point()
-        self.pose.x = start[0]
-        self.pose.y = start[1]
+desired_position_ = Point()
+desired_position_.x = rospy.get_param('des_pos_x')
+desired_position_.y = rospy.get_param('des_pos_y')
+desired_position_.z = 0
 
-        self.goal = Point()
-        self.goal.x = goal[0]
-        self.goal.y = goal[1]
+regions_ = None
+state_desc_ = ['Go to point', 'Wall following']
+state_ = 0
+count_state_time_ = 0
+count_loop_ = 0
 
-        # Init rest
-        self.yaw = 0
-        self.regions = None
-        self.state = 0  # 0: go to point, 1: follow wall, 2: goal reached
+# Callbacks
+def clbk_odom(msg):
+    global position_, yaw_
+    position_ = msg.pose.pose.position
+    quaternion = (
+        msg.pose.pose.orientation.x,
+        msg.pose.pose.orientation.y,
+        msg.pose.pose.orientation.z,
+        msg.pose.pose.orientation.w)
+    euler = transformations.euler_from_quaternion(quaternion)
+    yaw_ = euler[2]
 
-        # ROS interfaces
-        self.pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
-        rospy.Subscriber('/scan', LaserScan, self.laser_callback)
-        rospy.Subscriber('/odom', Odometry, self.odom_callback)
+def clbk_laser(msg):
+    global regions_
+    regions_ = {
+        'right':  min(min(msg.ranges[0:143]), 10),
+        'fright': min(min(msg.ranges[144:287]), 10),
+        'front':  min(min(msg.ranges[288:431]), 10),
+        'fleft':  min(min(msg.ranges[432:575]), 10),
+        'left':   min(min(msg.ranges[576:719]), 10),
+    }
 
-        self.rate = rospy.Rate(10)
+def change_state(state):
+    global state_, state_desc_, srv_client_wall_follower_, srv_client_go_to_point_, count_state_time_
+    if state != state_:
+        rospy.loginfo("State changed: %s", state_desc_[state])
+        count_state_time_ = 0
+        state_ = state
+        if state_ == 0:
+            srv_client_go_to_point_(True)
+            srv_client_wall_follower_(False)
+        elif state_ == 1:
+            srv_client_go_to_point_(False)
+            srv_client_wall_follower_(True)
 
-    def laser_callback(self, msg):
-        self.regions = {
-            'front': min(min(msg.ranges[0:10] + msg.ranges[-10:]), 10),
-            'left': min(min(msg.ranges[60:100]), 10),
-            'right': min(min(msg.ranges[260:300]), 10),
-        }
+def distance_to_line(p0):
+    global initial_position_, desired_position_
+    p1 = initial_position_
+    p2 = desired_position_
+    up_eq = math.fabs((p2.y - p1.y) * p0.x - (p2.x - p1.x) * p0.y + (p2.x * p1.y) - (p2.y * p1.x))
+    lo_eq = math.sqrt(pow(p2.y - p1.y, 2) + pow(p2.x - p1.x, 2))
+    return up_eq / lo_eq
 
-    def odom_callback(self, msg):
-        self.pose = msg.pose.pose.position
-        orientation_q = msg.pose.pose.orientation
-        (_, _, self.yaw) = transformations.euler_from_quaternion(
-            [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w])
+def normalize_angle(angle):
+    if abs(angle) > math.pi:
+        angle = angle - (2 * math.pi * angle) / abs(angle)
+    return angle
 
-    def distance_to_goal(self):
-        return math.sqrt(
-            (self.goal.x - self.pose.x) ** 2 + (self.goal.y - self.pose.y) ** 2
-        )
+def main():
+    global regions_, position_, desired_position_, state_, yaw_, yaw_error_allowed_
+    global srv_client_go_to_point_, srv_client_wall_follower_
+    global count_state_time_, count_loop_
 
-    def run(self):
-        rospy.loginfo("🚀 Bug2 behavior started")
-        vel = Twist()
+    rospy.loginfo("Initial: (%.2f, %.2f)", initial_position_.x, initial_position_.y)
+    rospy.loginfo("Goal:    (%.2f, %.2f)", desired_position_.x, desired_position_.y)
 
-        while not rospy.is_shutdown():
-            # Wait until we have data
-            if self.regions is None:
-                rospy.loginfo_throttle(2, "⏳ Waiting for laser scan data...")
-                self.rate.sleep()
-                continue
+    rospy.init_node('bug2')
 
-            dist = self.distance_to_goal()
-            rospy.loginfo_throttle(1, f"📍 Pose: ({self.pose.x:.2f}, {self.pose.y:.2f}) | 📌 Goal: ({self.goal.x:.2f}, {self.goal.y:.2f}) | 📏 Distance: {dist:.2f} | 🧠 State: {self.state}")
+    sub_laser = rospy.Subscriber('/group16Bot/laser/scan', LaserScan, clbk_laser)
+    sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
 
-            if dist < 0.2:
-                self.state = 2
+    rospy.wait_for_service('/go_to_point_switch')
+    rospy.wait_for_service('/wall_follower_switch')
+    rospy.wait_for_service('/gazebo/set_model_state')
 
-            if self.state == 0:  # Go to point
-                if self.regions['front'] < 0.8:
-                    self.state = 1
-                    rospy.loginfo("🚧 Obstacle ahead → switching to FollowWall")
-                    continue
-                vel.linear.x = 0.3
-                vel.angular.z = 0.0
+    srv_client_go_to_point_ = rospy.ServiceProxy('/go_to_point_switch', SetBool)
+    srv_client_wall_follower_ = rospy.ServiceProxy('/wall_follower_switch', SetBool)
+    srv_client_set_model_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
 
-            elif self.state == 1:  # Follow wall
-                if self.regions['front'] > 1.0 and self.regions['left'] > 1.0:
-                    self.state = 0
-                    rospy.loginfo("🛣️ Path clear → switching to GoToPoint")
-                    continue
-                vel.linear.x = 0.1
-                vel.angular.z = 0.4
+    rospy.sleep(2.0)
 
-            elif self.state == 2:  # Goal reached
-                vel.linear.x = 0
-                vel.angular.z = 0
-                rospy.loginfo("🎯 Goal reached! Shutting down.")
-                self.pub.publish(vel)
-                break
+    # set robot position in Gazebo
+    model_state = ModelState()
+    model_state.model_name = 'group16Bot'
+    model_state.pose.position.x = initial_position_.x
+    model_state.pose.position.y = initial_position_.y
+    resp = srv_client_set_model_state(model_state)
 
-            self.pub.publish(vel)
-            self.rate.sleep()
+    # start by going to the point
+    change_state(0)
 
-if __name__ == '__main__':
-    try:
-        Bug2Full().run()
-    except rospy.ROSInterruptException:
-        pass
+    rate = rospy.Rate(20)
+    while not rospy.is_shutdown():
+        if regions_ is None:
+            rate.sleep()
+            continue
+
+        distance_position_to_line = distance_to_line(position_)
+
+        if state_ == 0:
+            if regions_['front'] > 0.15 and regions_['front'] < 1:
+                change_state(1)
+
+        elif state_ == 1:
+            if count_state_time_ > 5 and distance_position_to_line < 0.1:
+                change_state(0)
+
+        count_loop_ += 1
+        if count_loop_ == 20:
+            count_state_time_ += 1
+            count_loop_ = 0
+
+        rospy.loginfo("Distance to line: %.2f | Position: (%.2f, %.2f)", distance_position_to_line, position_.x, position_.y)
+
+        rate.sleep()
+
+if __name__ == "__main__":
+    main()
