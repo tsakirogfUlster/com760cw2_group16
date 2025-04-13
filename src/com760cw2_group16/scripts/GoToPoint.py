@@ -40,7 +40,7 @@ class GoToPoint:
         self.dist_threshold = rospy.get_param('th_dist')  # unit: meter
         # publishers
         self.pub_vel = rospy.Publisher('/group16Bot/cmd_vel', Twist, queue_size=1)
-        self.sub_odom = rospy.Subscriber('odom', Odometry, self.callback_odom)
+        self.sub_odom = rospy.Subscriber('/group16Bot/odom', Odometry, self.callback_odom)
         # Declaring a new service named wall_follower_switch using the defined custom service as required.
         # All requests are passed to wall_follower_switch function
         self.srv = rospy.Service('go_to_point_switch', SetBool, self.go_to_point_switch)

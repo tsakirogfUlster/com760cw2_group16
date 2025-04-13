@@ -93,7 +93,7 @@ def main():
     rospy.init_node('bug2')
 
     sub_laser = rospy.Subscriber('/group16Bot/laser/scan', LaserScan, clbk_laser)
-    sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
+    sub_odom = rospy.Subscriber('/group16Bot/odom', Odometry, clbk_odom)
 
     rospy.wait_for_service('/go_to_point_switch')
     rospy.wait_for_service('/wall_follower_switch')
