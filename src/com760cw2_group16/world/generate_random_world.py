@@ -9,6 +9,12 @@ NUM_RANDOM_WALLS = 6
 def round_to_half(val):
     return round(val * 2) / 2.0
 
+def is_too_close_to_point(x, y, point, threshold=2):
+    dx = x - point[0]
+    dy = y - point[1]
+    return (dx * dx + dy * dy) < (threshold * threshold)
+
+
 def write_header(f):
     f.write("""<?xml version="1.0"?>
 <sdf version="1.6">
@@ -58,6 +64,8 @@ def write_random_obstacles(f):
     for i in range(NUM_OBSTACLES):
         x = round_to_half(random.uniform(-WORLD_SIZE/2 + 1, WORLD_SIZE/2 - 1))
         y = round_to_half(random.uniform(-WORLD_SIZE/2 + 1, WORLD_SIZE/2 - 1))
+        if is_too_close_to_point(x, y, (-4, -4)) or is_too_close_to_point(x, y, (4, 4)):
+            continue
         f.write("""
   <model name="obstacle_{0}">
     <static>true</static>
@@ -82,6 +90,8 @@ def write_random_walls(f):
     for i in range(NUM_RANDOM_WALLS):
         x = round_to_half(random.uniform(-WORLD_SIZE/2 + 2, WORLD_SIZE/2 - 2))
         y = round_to_half(random.uniform(-WORLD_SIZE/2 + 2, WORLD_SIZE/2 - 2))
+        if is_too_close_to_point(x, y, (-4, -4)) or is_too_close_to_point(x, y, (4, 4)):
+            continue
         yaw = random.choice([0, 1.57])  # aligned
         length = random.choice([1.0, 2.0])
         f.write("""
