@@ -20,7 +20,7 @@ from tf import transformations
 class GoToPoint:
 
     def __init__(self):
-        self.active = False
+        self.active = True
 
         # robot state variables
         self.position = Point()
