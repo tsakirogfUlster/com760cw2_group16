@@ -20,7 +20,7 @@
         args="-param robot_description -urdf -model group16Bot -x -4 -y -4 -z 0.1" />
 
   <arg name="initial_x" default="-4" />
-  <arg name="initial_y" default="-4" />
+  <arg name="initial_y" default="0" />
   <arg name="des_x" default="4" />
   <arg name="des_y" default="4" />
   <param name="th_yaw" value="5" />
