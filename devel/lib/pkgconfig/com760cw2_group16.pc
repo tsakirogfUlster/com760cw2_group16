@@ -3,6 +3,6 @@ prefix=/home/fotis/Documents/ulster/com760cw2_group16/devel
 Name: com760cw2_group16
 Description: Description of com760cw2_group16
 Version: 1.0.0
-Cflags: 
+Cflags: -I/home/fotis/Documents/ulster/com760cw2_group16/devel/include
 Libs: -L${prefix}/lib 
 Requires: 
