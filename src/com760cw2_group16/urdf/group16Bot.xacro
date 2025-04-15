@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="group16Bot">
+
+  <xacro:include filename="base.urdf.xacro"/>
+  <xacro:include filename="wheels.urdf.xacro"/>
+  <xacro:include filename="sensors.urdf.xacro"/>
+
+</robot>
