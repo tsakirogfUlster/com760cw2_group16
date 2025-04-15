@@ -3,8 +3,8 @@ import random
 import rospy
 
 WORLD_SIZE = 12  # 12x12 meters
-NUM_OBSTACLES = 4
-NUM_RANDOM_WALLS = 6
+NUM_OBSTACLES = 2
+NUM_RANDOM_WALLS = 2
 
 def round_to_half(val):
     return round(val * 2) / 2.0

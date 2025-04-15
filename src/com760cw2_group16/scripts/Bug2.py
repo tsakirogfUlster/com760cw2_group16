@@ -8,6 +8,7 @@ from tf import transformations
 from gazebo_msgs.msg import ModelState
 from gazebo_msgs.srv import SetModelState
 from std_srvs.srv import SetBool
+from com760cw2_group16.srv import HomingSignal, HomingSignalResponse, SetTargetPoint
 
 import math
 
@@ -82,6 +83,34 @@ def normalize_angle(angle):
         angle = angle - (2 * math.pi * angle) / abs(angle)
     return angle
 
+def handle_homing_signal(req):
+    global desired_position_, initial_position_, position_
+
+    # Update desired goal from service request
+    desired_position_.x = req.x
+    desired_position_.y = req.y
+    desired_position_.z = 0
+
+    # Update initial position to current one, so the line resets
+    initial_position_.x = position_.x
+    initial_position_.y = position_.y
+    initial_position_.z = 0
+
+    # Force activation of GoToPoint and deactivation of WallFollowing
+    resp1 = srv_client_go_to_point_(True)
+    resp2 = srv_client_wall_follower_(False)
+    rospy.loginfo("Activated GoToPoint: %s | Deactivated WallFollower: %s", resp1.success, resp2.success)
+
+    rospy.wait_for_service('/set_target_point')
+    set_target_srv = rospy.ServiceProxy('/set_target_point', SetTargetPoint)
+    resp = set_target_srv(req.x, req.y)
+    rospy.loginfo("Sent target to GoToPoint: %s", resp.message)
+    # Switch state to GoToPoint (to start driving toward the new goal)
+    change_state(0)
+
+    rospy.loginfo("Homing to new target: (%.2f, %.2f)", req.x, req.y)
+    return HomingSignalResponse(success=True, message="Homing target set")
+
 def main():
     global regions_, position_, desired_position_, state_, yaw_, yaw_error_allowed_
     global srv_client_go_to_point_, srv_client_wall_follower_
@@ -98,6 +127,7 @@ def main():
     rospy.wait_for_service('/go_to_point_switch')
     rospy.wait_for_service('/wall_follower_switch')
     rospy.wait_for_service('/gazebo/set_model_state')
+    rospy.Service('/homing_signal', HomingSignal, handle_homing_signal)
 
     srv_client_go_to_point_ = rospy.ServiceProxy('/go_to_point_switch', SetBool)
     srv_client_wall_follower_ = rospy.ServiceProxy('/wall_follower_switch', SetBool)
@@ -142,3 +172,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    rospy.spin()

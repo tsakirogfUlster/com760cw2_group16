@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/com760cw2_group16_generate_messages_eus"
-  "/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetBugMode.l"
+  "/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetTargetPoint.l"
+  "/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/HomingSignal.l"
   "/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/manifest.l"
 )
 

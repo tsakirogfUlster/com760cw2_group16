@@ -1,8 +1,10 @@
 
 "use strict";
 
-let SetBugMode = require('./SetBugMode.js')
+let SetTargetPoint = require('./SetTargetPoint.js')
+let HomingSignal = require('./HomingSignal.js')
 
 module.exports = {
-  SetBugMode: SetBugMode,
+  SetTargetPoint: SetTargetPoint,
+  HomingSignal: HomingSignal,
 };

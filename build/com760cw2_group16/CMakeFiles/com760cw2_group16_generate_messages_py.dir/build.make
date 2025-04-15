@@ -53,22 +53,30 @@ CMAKE_BINARY_DIR = /home/fotis/Documents/ulster/com760cw2_group16/build
 # Include the progress variables for this target.
 include com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/progress.make
 
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetBugMode.py
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetTargetPoint.py
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_HomingSignal.py
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/__init__.py
 
 
-/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetBugMode.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
-/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetBugMode.py: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetBugMode.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV com760cw2_group16/SetBugMode"
-	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetBugMode.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv
+/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetTargetPoint.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetTargetPoint.py: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV com760cw2_group16/SetTargetPoint"
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv
+
+/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_HomingSignal.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_HomingSignal.py: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV com760cw2_group16/HomingSignal"
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv
 
 /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/__init__.py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetBugMode.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for com760cw2_group16"
+/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/__init__.py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetTargetPoint.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/__init__.py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_HomingSignal.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for com760cw2_group16"
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv --initpy
 
 com760cw2_group16_generate_messages_py: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py
-com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetBugMode.py
+com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_SetTargetPoint.py
+com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/_HomingSignal.py
 com760cw2_group16_generate_messages_py: /home/fotis/Documents/ulster/com760cw2_group16/devel/lib/python2.7/dist-packages/com760cw2_group16/srv/__init__.py
 com760cw2_group16_generate_messages_py: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/build.make
 

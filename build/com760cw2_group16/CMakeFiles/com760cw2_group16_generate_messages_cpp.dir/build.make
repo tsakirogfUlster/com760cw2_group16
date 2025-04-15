@@ -53,18 +53,27 @@ CMAKE_BINARY_DIR = /home/fotis/Documents/ulster/com760cw2_group16/build
 # Include the progress variables for this target.
 include com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/progress.make
 
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp: /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetBugMode.h
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp: /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetTargetPoint.h
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp: /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/HomingSignal.h
 
 
-/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetBugMode.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetBugMode.h: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetBugMode.srv
-/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetBugMode.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetBugMode.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from com760cw2_group16/SetBugMode.srv"
-	cd /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16 && /home/fotis/Documents/ulster/com760cw2_group16/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetBugMode.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16 -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetTargetPoint.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetTargetPoint.h: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetTargetPoint.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetTargetPoint.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from com760cw2_group16/SetTargetPoint.srv"
+	cd /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16 && /home/fotis/Documents/ulster/com760cw2_group16/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16 -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/HomingSignal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/HomingSignal.h: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/HomingSignal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/HomingSignal.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from com760cw2_group16/HomingSignal.srv"
+	cd /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16 && /home/fotis/Documents/ulster/com760cw2_group16/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16 -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 com760cw2_group16_generate_messages_cpp: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp
-com760cw2_group16_generate_messages_cpp: /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetBugMode.h
+com760cw2_group16_generate_messages_cpp: /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetTargetPoint.h
+com760cw2_group16_generate_messages_cpp: /home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/HomingSignal.h
 com760cw2_group16_generate_messages_cpp: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/build.make
 
 .PHONY : com760cw2_group16_generate_messages_cpp

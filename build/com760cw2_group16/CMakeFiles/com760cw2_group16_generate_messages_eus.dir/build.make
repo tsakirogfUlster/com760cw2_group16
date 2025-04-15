@@ -53,21 +53,28 @@ CMAKE_BINARY_DIR = /home/fotis/Documents/ulster/com760cw2_group16/build
 # Include the progress variables for this target.
 include com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/progress.make
 
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetBugMode.l
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetTargetPoint.l
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/HomingSignal.l
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/manifest.l
 
 
-/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetBugMode.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetBugMode.l: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetBugMode.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from com760cw2_group16/SetBugMode.srv"
-	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetBugMode.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv
+/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetTargetPoint.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetTargetPoint.l: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from com760cw2_group16/SetTargetPoint.srv"
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv
+
+/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/HomingSignal.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/HomingSignal.l: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from com760cw2_group16/HomingSignal.srv"
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv
 
 /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for com760cw2_group16"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for com760cw2_group16"
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16 com760cw2_group16 std_msgs
 
 com760cw2_group16_generate_messages_eus: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus
-com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetBugMode.l
+com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/SetTargetPoint.l
+com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/srv/HomingSignal.l
 com760cw2_group16_generate_messages_eus: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/roseus/ros/com760cw2_group16/manifest.l
 com760cw2_group16_generate_messages_eus: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/build.make
 
