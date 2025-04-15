@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv"
+services_str = "/home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv;/home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv"
 pkg_name = "com760cw2_group16"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

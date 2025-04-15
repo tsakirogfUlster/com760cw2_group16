@@ -6,6 +6,6 @@
   :components ((:file "_package")
     (:file "HomingSignal" :depends-on ("_package_HomingSignal"))
     (:file "_package_HomingSignal" :depends-on ("_package"))
-    (:file "SetBugMode" :depends-on ("_package_SetBugMode"))
-    (:file "_package_SetBugMode" :depends-on ("_package"))
+    (:file "SetTargetPoint" :depends-on ("_package_SetTargetPoint"))
+    (:file "_package_SetTargetPoint" :depends-on ("_package"))
   ))

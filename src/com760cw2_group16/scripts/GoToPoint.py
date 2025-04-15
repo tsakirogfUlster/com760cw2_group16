@@ -2,20 +2,14 @@
 import math
 
 import rospy
+import random
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist, Point
 from nav_msgs.msg import Odometry
 from std_srvs.srv import SetBool, SetBoolResponse
 from tf import transformations
+from com760cw2_group16.srv import SetTargetPoint, SetTargetPointResponse
 
-
-# A partially completed python class used to move a robot from any point to a desired point
-
-# It is used to suport the robot to navigate within in an unknown enviornment using a bug algorithm
-# Here is a scenario:
-# The robot starts with randomly wandering around waiting for a homing signal. Once it receives a homing signal,
-# which can be published/set up using a custom message/service for example,
-# it should begin the journey back to the docking station whose coordinates are specified in the custom message/service
 
 class GoToPoint:
 
@@ -29,10 +23,11 @@ class GoToPoint:
         # More information can be found at https://www.theconstructsim.com/ros-projects-exploring-ros-using-2-wheeled-robot-part-1/
         self.state = 0
         # Destination, which should be initilised using a custom service/message for example
-        self.desired_position = Point()
-        self.desired_position.x = rospy.get_param('des_pos_x')
-        self.desired_position.y = rospy.get_param('des_pos_y')
-        self.desired_position.z = 0
+        self.random_mode = True
+        self.homing_received = False
+
+        self.desired_position = self.generate_random_goal()
+
         # Threshold parameters
         self.yaw_threshold = rospy.get_param('th_yaw')  # unit: degree
         self.yaw_threshold *= math.pi / 90  # convert to radian
@@ -44,12 +39,11 @@ class GoToPoint:
         # Declaring a new service named wall_follower_switch using the defined custom service as required.
         # All requests are passed to wall_follower_switch function
         self.srv = rospy.Service('go_to_point_switch', SetBool, self.go_to_point_switch)
+        self.setTargetServce = rospy.Service('/set_target_point', SetTargetPoint, self.handle_set_target)
 
         rate = rospy.Rate(20)
         while not rospy.is_shutdown():
-            if not self.active:
-                continue
-            else:
+            if self.active:
                 if self.state == 0:
                     self.fix_heading(self.desired_position)
                 elif self.state == 1:
@@ -58,7 +52,6 @@ class GoToPoint:
                     self.done()
                 else:
                     rospy.logerr('Unknown state!')
-
             rate.sleep()
 
     def go_to_point_switch(self, req):
@@ -105,6 +98,20 @@ class GoToPoint:
             rospy.loginfo('Yaw error: [%s]', err_yaw)
             self.change_state(1)
 
+    def generate_random_goal(self):
+        x = random.uniform(-5.0, 5.0)
+        y = random.uniform(-5.0, 5.0)
+        rospy.loginfo("[RANDOM] New goal: (%.2f, %.2f)\", x, y)")
+        return Point(x=x, y=y, z=0)
+
+    def handle_set_target(self, req):
+        self.random_mode = False
+        self.homing_received = True
+        self.desired_position.x = req.x
+        self.desired_position.y = req.y
+        rospy.loginfo("[GoToPoint] New target received: (%.2f, %.2f)", req.x, req.y)
+        return SetTargetPointResponse(success=True, message="Target updated")
+
     def go_straight(self, des_pos):
         desired_yaw = math.atan2(des_pos.y - self.position.y, des_pos.x - self.position.x)
         err_yaw = self.normalize_angle(desired_yaw - self.yaw)
@@ -128,6 +135,14 @@ class GoToPoint:
         twist_msg.linear.x = 0
         twist_msg.angular.z = 0
         self.pub_vel.publish(twist_msg)
+
+        if self.random_mode:
+            rospy.sleep(1.0)
+            self.desired_position = self.generate_random_goal()
+            self.change_state(0)
+        elif self.homing_received:
+            rospy.loginfo("[HOMING] Reached docking station. Stopping robot.")
+            self.active = False
 
 # Please complete the rest of code.
 # The overall logic that governs its behavious can be found at

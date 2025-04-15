@@ -53,15 +53,22 @@ CMAKE_BINARY_DIR = /home/fotis/Documents/ulster/com760cw2_group16/build
 # Include the progress variables for this target.
 include com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/progress.make
 
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/SetTargetPoint.lisp
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/HomingSignal.lisp
 
 
+/home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/SetTargetPoint.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/SetTargetPoint.lisp: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from com760cw2_group16/SetTargetPoint.srv"
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/SetTargetPoint.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv
+
 /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/HomingSignal.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/HomingSignal.lisp: /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from com760cw2_group16/HomingSignal.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from com760cw2_group16/HomingSignal.srv"
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build/com760cw2_group16 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/fotis/Documents/ulster/com760cw2_group16/src/com760cw2_group16/srv/HomingSignal.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p com760cw2_group16 -o /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv
 
 com760cw2_group16_generate_messages_lisp: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp
+com760cw2_group16_generate_messages_lisp: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/SetTargetPoint.lisp
 com760cw2_group16_generate_messages_lisp: /home/fotis/Documents/ulster/com760cw2_group16/devel/share/common-lisp/ros/com760cw2_group16/srv/HomingSignal.lisp
 com760cw2_group16_generate_messages_lisp: com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/build.make
 

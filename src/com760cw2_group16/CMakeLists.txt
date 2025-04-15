@@ -59,6 +59,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
   FILES
   HomingSignal.srv
+  SetTargetPoint.srv
 )
 
 ## Generate added messages and services
