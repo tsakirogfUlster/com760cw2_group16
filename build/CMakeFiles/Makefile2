@@ -409,6 +409,7 @@ com760cw2_group16/clean: com760cw2_group16/CMakeFiles/geometry_msgs_generate_mes
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/nav_msgs_generate_messages_py.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/nav_msgs_generate_messages_eus.dir/clean
+com760cw2_group16/clean: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/com760cw2_group16_genpy.dir/clean
@@ -417,7 +418,6 @@ com760cw2_group16/clean: com760cw2_group16/CMakeFiles/trajectory_msgs_generate_m
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
-com760cw2_group16/clean: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean
 com760cw2_group16/clean: com760cw2_group16/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
@@ -491,7 +491,7 @@ clean: com760cw2_group16/CMakeFiles/com760cw2_group16_gennodejs.dir/clean
 # Target rules for target com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir
 
 # All Build rule for target.
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/all: com760cw2_group16/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/depend
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_nodejs.dir/build
@@ -557,7 +557,7 @@ clean: com760cw2_group16/CMakeFiles/com760cw2_group16_genlisp.dir/clean
 
 # All Build rule for target.
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/all: com760cw2_group16/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/depend
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=4 "Built target com760cw2_group16_generate_messages_lisp"
@@ -906,6 +906,38 @@ clean: com760cw2_group16/CMakeFiles/nav_msgs_generate_messages_eus.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir
+
+# All Build rule for target.
+com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all:
+	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/depend
+	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num= "Built target _com760cw2_group16_generate_messages_check_deps_HomingSignal"
+.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all
+
+# Build rule for subdir invocation for target.
+com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles 0
+.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/rule
+
+# Convenience name for target.
+_com760cw2_group16_generate_messages_check_deps_HomingSignal: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/rule
+
+.PHONY : _com760cw2_group16_generate_messages_check_deps_HomingSignal
+
+# clean rule for target.
+com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/clean:
+	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/clean
+.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/clean
+
+# clean rule for target.
+clean: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -1162,38 +1194,6 @@ clean: com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir
-
-# All Build rule for target.
-com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all:
-	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/depend
-	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num= "Built target _com760cw2_group16_generate_messages_check_deps_SetBugMode"
-.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all
-
-# Build rule for subdir invocation for target.
-com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles 0
-.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
-
-# Convenience name for target.
-_com760cw2_group16_generate_messages_check_deps_SetBugMode: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
-
-.PHONY : _com760cw2_group16_generate_messages_check_deps_SetBugMode
-
-# clean rule for target.
-com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/clean:
-	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/clean
-.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/clean
-
-# clean rule for target.
-clean: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_py.dir
 
 # All Build rule for target.
@@ -1357,7 +1357,7 @@ clean: com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_py.dir/clea
 # Target rules for target com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir
 
 # All Build rule for target.
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/all: com760cw2_group16/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/depend
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_cpp.dir/build
@@ -1583,7 +1583,7 @@ clean: com760cw2_group16/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/
 
 # All Build rule for target.
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/all: com760cw2_group16/CMakeFiles/std_msgs_generate_messages_py.dir/all
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/depend
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fotis/Documents/ulster/com760cw2_group16/build/CMakeFiles --progress-num=6,7 "Built target com760cw2_group16_generate_messages_py"
@@ -1967,7 +1967,7 @@ clean: com760cw2_group16/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/clean
 # Target rules for target com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir
 
 # All Build rule for target.
-com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/all
+com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/all: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/all
 com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/all: com760cw2_group16/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/depend
 	$(MAKE) -f com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/build.make com760cw2_group16/CMakeFiles/com760cw2_group16_generate_messages_eus.dir/build

@@ -58,7 +58,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_service_files(
   FILES
-  SetBugMode.srv
+  HomingSignal.srv
 )
 
 ## Generate added messages and services

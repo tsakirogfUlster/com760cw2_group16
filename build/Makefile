@@ -465,6 +465,19 @@ nav_msgs_generate_messages_eus/fast:
 .PHONY : nav_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named _com760cw2_group16_generate_messages_check_deps_HomingSignal
+
+# Build rule for target.
+_com760cw2_group16_generate_messages_check_deps_HomingSignal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _com760cw2_group16_generate_messages_check_deps_HomingSignal
+.PHONY : _com760cw2_group16_generate_messages_check_deps_HomingSignal
+
+# fast build rule for target.
+_com760cw2_group16_generate_messages_check_deps_HomingSignal/fast:
+	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build
+.PHONY : _com760cw2_group16_generate_messages_check_deps_HomingSignal/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -567,19 +580,6 @@ gazebo_msgs_generate_messages_py: cmake_check_build_system
 gazebo_msgs_generate_messages_py/fast:
 	$(MAKE) -f com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
 .PHONY : gazebo_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named _com760cw2_group16_generate_messages_check_deps_SetBugMode
-
-# Build rule for target.
-_com760cw2_group16_generate_messages_check_deps_SetBugMode: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _com760cw2_group16_generate_messages_check_deps_SetBugMode
-.PHONY : _com760cw2_group16_generate_messages_check_deps_SetBugMode
-
-# fast build rule for target.
-_com760cw2_group16_generate_messages_check_deps_SetBugMode/fast:
-	$(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build
-.PHONY : _com760cw2_group16_generate_messages_check_deps_SetBugMode/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
@@ -994,6 +994,7 @@ help:
 	@echo "... nav_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... _com760cw2_group16_generate_messages_check_deps_HomingSignal"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... com760cw2_group16_genpy"
@@ -1002,7 +1003,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... gazebo_msgs_generate_messages_eus"
 	@echo "... gazebo_msgs_generate_messages_py"
-	@echo "... _com760cw2_group16_generate_messages_check_deps_SetBugMode"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... gazebo_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"

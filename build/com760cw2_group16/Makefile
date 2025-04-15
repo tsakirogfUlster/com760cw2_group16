@@ -376,6 +376,21 @@ nav_msgs_generate_messages_eus/fast:
 .PHONY : nav_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/rule:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/rule
+.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/rule
+
+# Convenience name for target.
+_com760cw2_group16_generate_messages_check_deps_HomingSignal: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/rule
+
+.PHONY : _com760cw2_group16_generate_messages_check_deps_HomingSignal
+
+# fast build rule for target.
+_com760cw2_group16_generate_messages_check_deps_HomingSignal/fast:
+	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_HomingSignal.dir/build
+.PHONY : _com760cw2_group16_generate_messages_check_deps_HomingSignal/fast
+
+# Convenience name for target.
 com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 .PHONY : com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
@@ -494,21 +509,6 @@ gazebo_msgs_generate_messages_py: com760cw2_group16/CMakeFiles/gazebo_msgs_gener
 gazebo_msgs_generate_messages_py/fast:
 	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make com760cw2_group16/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
 .PHONY : gazebo_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule:
-	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f CMakeFiles/Makefile2 com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
-.PHONY : com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
-
-# Convenience name for target.
-_com760cw2_group16_generate_messages_check_deps_SetBugMode: com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/rule
-
-.PHONY : _com760cw2_group16_generate_messages_check_deps_SetBugMode
-
-# fast build rule for target.
-_com760cw2_group16_generate_messages_check_deps_SetBugMode/fast:
-	cd /home/fotis/Documents/ulster/com760cw2_group16/build && $(MAKE) -f com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build.make com760cw2_group16/CMakeFiles/_com760cw2_group16_generate_messages_check_deps_SetBugMode.dir/build
-.PHONY : _com760cw2_group16_generate_messages_check_deps_SetBugMode/fast
 
 # Convenience name for target.
 com760cw2_group16/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
@@ -970,6 +970,7 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... install/strip"
 	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... _com760cw2_group16_generate_messages_check_deps_HomingSignal"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... com760cw2_group16_genpy"
@@ -978,7 +979,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... gazebo_msgs_generate_messages_eus"
 	@echo "... gazebo_msgs_generate_messages_py"
-	@echo "... _com760cw2_group16_generate_messages_check_deps_SetBugMode"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... gazebo_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"

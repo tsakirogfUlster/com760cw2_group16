@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/com760cw2_group16_generate_messages_cpp"
-  "/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/SetBugMode.h"
+  "/home/fotis/Documents/ulster/com760cw2_group16/devel/include/com760cw2_group16/HomingSignal.h"
 )
 
 # Per-language clean rules from dependency scanning.
