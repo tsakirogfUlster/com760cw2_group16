@@ -1,12 +1,22 @@
 <?xml version="1.0"?>
 <robot name="group16Bot">
 
-  <!-- all the gazebo tags -->
   <gazebo reference="base_link_chassis">
     <material>Gazebo/Orange</material>
   </gazebo>
+    <gazebo reference="left_wheel_front">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="right_wheel_front">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+    <gazebo reference="left_wheel_back">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="right_wheel_back">
+    <material>Gazebo/Blue</material>
+  </gazebo>
 
-  <!-- Base link -->
   <link name="base_link_chassis">
     <visual>
       <geometry>
@@ -51,154 +61,164 @@
     </inertial>
   </link>
 
-  <!-- Wheel links-->
-  <!-- Create wheel Front -->
-  <link name="right_wheel_front">
-    <visual name="right_wheel_front_visual">
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0.2 0.2 1.0 1.0"/>
-      </material>
-    </visual>
-    <inertial>
-      <mass value="0.2"/>
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <inertia ixx="0.00052666666" ixy="0" ixz="0" iyy="0.00052666666" iyz="0" izz="0.001"/>
-    </inertial>
 
-    <collision name="right_wheel_front_collision">
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <!--   Joint for right wheel  -->
-  <joint name="right_wheel_front_hinge" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.05 0.05 -0.1"/>
-    <child link="right_wheel_front" />
-    <parent link="base_link_chassis"/>
-    <axis rpy="0 0 0" xyz="0 1 0"/>
-    <limit effort="10000" velocity="1000"/>
-    <joint_properties damping="1.0" friction="1.0" />
-  </joint>
-
-  <!-- Left Wheel link -->
   <link name="left_wheel_front">
     <visual name="left_wheel_front_visual">
       <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0.2 0.2 1.0 1.0"/>
-      </material>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
+      <material name="blue"><color rgba="0.2 0.2 1.0 1.0"/></material>
     </visual>
     <inertial>
       <mass value="0.2"/>
       <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <inertia ixx="0.00052666666" ixy="0" ixz="0" iyy="0.00052666666" iyz="0" izz="0.001"/>
+      <inertia ixx="0.00052666666" ixy="0" ixz="0"
+               iyy="0.00052666666" iyz="0" izz="0.001"/>
     </inertial>
     <collision name="left_wheel_front_collision">
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
     </collision>
   </link>
 
-  <!--   Joint for left wheel  -->
   <joint name="left_wheel_front_hinge" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.05 -0.05 -0.1"/>
-    <child link="left_wheel_front" />
+    <origin rpy="0 0 0" xyz="0.1  0.15 -0.1"/>
+    <child link="left_wheel_front"/>
     <parent link="base_link_chassis"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <limit effort="10000" velocity="1000"/>
-    <joint_properties damping="1.0" friction="1.0" />
+    <joint_properties damping="1.0" friction="1.0"/>
   </joint>
 
-  <!-- Create wheel Back -->
-  <link name="right_wheel_back">
-    <visual name="right_wheel_back_visual">
+  <link name="right_wheel_front">
+    <visual name="right_wheel_front_visual">
       <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0.2 0.2 1.0 1.0"/>
-      </material>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
+      <material name="blue"><color rgba="0.2 0.2 1.0 1.0"/></material>
     </visual>
     <inertial>
       <mass value="0.2"/>
       <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <inertia ixx="0.00052666666" ixy="0" ixz="0" iyy="0.00052666666" iyz="0" izz="0.001"/>
+      <inertia ixx="0.00052666666" ixy="0" ixz="0"
+               iyy="0.00052666666" iyz="0" izz="0.001"/>
     </inertial>
-
-    <collision name="right_wheel_back_collision">
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
+    <collision name="right_wheel_front_collision">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
     </collision>
   </link>
 
-  <!--   Joint for right wheel  -->
-  <joint name="right_wheel_back_hinge" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.05 0.25 -0.1"/>
-    <child link="right_wheel_back" />
+  <joint name="right_wheel_front_hinge" type="continuous">
+    <origin rpy="0 0 0" xyz="0.1 -0.15 -0.1"/>
+    <child link="right_wheel_front"/>
     <parent link="base_link_chassis"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <limit effort="10000" velocity="1000"/>
-    <joint_properties damping="1.0" friction="1.0" />
+    <joint_properties damping="1.0" friction="1.0"/>
   </joint>
 
-  <!-- Left Wheel link -->
   <link name="left_wheel_back">
     <visual name="left_wheel_back_visual">
       <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0.2 0.2 1.0 1.0"/>
-      </material>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
+      <material name="blue"><color rgba="0.2 0.2 1.0 1.0"/></material>
     </visual>
     <inertial>
       <mass value="0.2"/>
       <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
-      <inertia ixx="0.00052666666" ixy="0" ixz="0" iyy="0.00052666666" iyz="0" izz="0.001"/>
+      <inertia ixx="0.00052666666" ixy="0" ixz="0"
+               iyy="0.00052666666" iyz="0" izz="0.001"/>
     </inertial>
     <collision name="left_wheel_back_collision">
-      <origin rpy="0 1.5707 1.5707" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.04" radius="0.1"/>
-      </geometry>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
     </collision>
   </link>
 
-  <!--   Joint for left wheel  -->
   <joint name="left_wheel_back_hinge" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.05 -0.25 -0.1"/>
-    <child link="left_wheel_back" />
+    <origin rpy="0 0 0" xyz="-0.1  0.15 -0.1"/>
+    <child link="left_wheel_back"/>
     <parent link="base_link_chassis"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
     <limit effort="10000" velocity="1000"/>
-    <joint_properties damping="1.0" friction="1.0" />
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <link name="right_wheel_back">
+    <visual name="right_wheel_back_visual">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
+      <material name="blue"><color rgba="0.2 0.2 1.0 1.0"/></material>
+    </visual>
+    <inertial>
+      <mass value="0.2"/>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <inertia ixx="0.00052666666" ixy="0" ixz="0"
+               iyy="0.00052666666" iyz="0" izz="0.001"/>
+    </inertial>
+    <collision name="right_wheel_back_collision">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry><cylinder length="0.04" radius="0.1"/></geometry>
+    </collision>
+  </link>
+
+  <joint name="right_wheel_back_hinge" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.1 -0.15 -0.1"/>
+    <child link="right_wheel_back"/>
+    <parent link="base_link_chassis"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
   </joint>
 
 
-
-
-  <!-- Joints -->
   <joint name="base_to_laser" type="fixed">
     <parent link="base_link_chassis"/>
     <child link="laser"/>
-    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
   </joint>
+
+  <link name="front_marker">
+    <visual>
+      <origin xyz="0.3 0 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.02 0.02"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="front_marker_joint" type="fixed">
+    <parent link="base_link_chassis"/>
+    <child link="front_marker"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+
+
+  <gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50.0</updateRate>
+      <leftJoint>left_wheel_front_hinge</leftJoint>
+      <rightJoint>right_wheel_front_hinge</rightJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.1</wheelDiameter>
+      <wheelTorque>5.0</wheelTorque>
+      <wheelAcceleration>0.0</wheelAcceleration>
+      <publishWheelTF>false</publishWheelTF>
+      <publishWheelJointState>true</publishWheelJointState>
+      <publishTf>true</publishTf>
+      <publishOdomTF>true</publishOdomTF>
+      <legacyMode>false</legacyMode>
+      <robotNamespace>/group16Bot</robotNamespace>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link_chassis</robotBaseFrame>
+    </plugin>
+  </gazebo>
 
   <gazebo reference="laser">
     <sensor type="ray" name="laser_sensor">
@@ -231,29 +251,4 @@
       </plugin>
     </sensor>
   </gazebo>
-
-  <!-- Diff Drive Plugin -->
-  <gazebo>
-    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>50.0</updateRate>
-      <leftJoint>left_wheel_front_hinge</leftJoint>
-      <rightJoint>right_wheel_front_hinge</rightJoint>
-      <wheelSeparation>0.4</wheelSeparation>
-      <wheelDiameter>0.1</wheelDiameter>
-      <wheelTorque>5.0</wheelTorque>
-      <wheelAcceleration>0.0</wheelAcceleration>
-      <publishWheelTF>false</publishWheelTF>
-      <publishWheelJointState>true</publishWheelJointState>
-      <publishTf>true</publishTf>
-      <publishOdomTF>true</publishOdomTF>
-      <legacyMode>false</legacyMode>
-      <robotNamespace>/group16Bot</robotNamespace>
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>base_link_chassis</robotBaseFrame>
-    </plugin>
-  </gazebo>
-
 </robot>
