@@ -1,6 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
   <xacro:property name="wheel_radius" value="0.1"/>
   <xacro:property name="wheel_length" value="0.04"/>
   <xacro:property name="wheel_mass" value="0.2"/>
