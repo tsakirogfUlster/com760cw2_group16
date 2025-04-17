@@ -8,16 +8,16 @@
   </include>
 
 <!-- Load URDF into parameter server -->
-  <param name="robot_description" textfile="$(find com760cw2_group16)/urdf/group16Bot.urdf" />
+  <param name="robot_description" textfile="$(find com760cw2_group16)/urdf/singleGroup16Bot.urdf" />
 
   <!-- Robot State Publisher -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
-  <param name="robot_description" textfile="$(find com760cw2_group16)/urdf/group16Bot.urdf"/>
+  <param name="robot_description" textfile="$(find com760cw2_group16)/urdf/singleGroup16Bot.urdf"/>
   </node>
 
   <!-- Spawn robot into Gazebo at starting point -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
-        args="-param robot_description -urdf -model group16Bot -x -4 -y -4 -z 0.1" />
+        args="-param robot_description -urdf -model singleGroup16Bot -x -4 -y -4 -z 0.1" />
 
   <arg name="initial_x" default="-4" />
   <arg name="initial_y" default="-4" />

@@ -2,7 +2,7 @@
 
   <!-- Load dynamically generated random world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="world_name" value="$(find com760cw2_group16)/world/com760World.world"/>
+      <arg name="world_name" value="$(find com760cw2_group16)/world/random_world.world"/>
       <arg name="use_sim_time" value="true"/>
       <arg name="gui" value="true"/>
   </include>
@@ -19,14 +19,14 @@
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
         args="-param robot_description -urdf -model singleGroup16Bot -x -4 -y -4 -z 0.1" />
 
-  <arg name="initial_x" default="-5" />
-  <arg name="initial_y" default="-5" />
+  <arg name="initial_x" default="-4" />
+  <arg name="initial_y" default="-4" />
   <param name="th_yaw" value="1.5" />
   <param name="th_dist" value="0.3" />
   <param name="initial_x" value="$(arg initial_x)" />
   <param name="initial_y" value="$(arg initial_y)" />
   <node pkg="com760cw2_group16" type="FollowWall.py" name="wall_follower" />
   <node pkg="com760cw2_group16" type="GoToPoint.py" name="go_to_point" />
-  <node pkg="com760cw2_group16" type="Bug2.py" name="bug2" output="screen" />
+  <node pkg="com760cw2_group16" type="Bug0.py" name="bug0" output="screen" />
 
 </launch>
